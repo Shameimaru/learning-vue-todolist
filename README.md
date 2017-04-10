@@ -25,5 +25,8 @@ To build for development.
  To build for production.
  
  `$ npm build:prod`
- 
- 
+
+## Improvement plan
++ Loaders for fonts, images, post-css processing and more to be added.
++ Needs a development server and relating server scripts.
++ Vuex might be added.
