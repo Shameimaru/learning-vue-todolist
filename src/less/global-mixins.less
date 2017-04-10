@@ -1,0 +1,33 @@
+.clear {
+  &::after {
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+}
+.border-1px {
+  border: 1px solid black;
+}
+.round-form-input(@height: 30px, @padding: 8px) {
+  @half-height: @height / 2;
+  input[type="text"] {
+    padding: 4px 10px;
+    height: @height;
+    line-height: @height;
+    border: 1px solid black;
+    border-radius: @half-height+10 0 0 @half-height+10;
+    &+button {
+      background-color: transparent;
+      border: 0;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+      height: @height + 10;
+      vertical-align: middle;
+      border-radius: 0 @half-height+10 @half-height+10 0;
+    }
+  }
+
+}
