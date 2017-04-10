@@ -5,9 +5,13 @@ This is a demo of vuejs for practicing. Still, there are lots of stuff to improv
 ## Dependencies used
 | name            |   description   |        
 |----------------|-------------------|
-|       vue      |         Main framework for this project.       |
-|       webpack  |    A module bundler for complex javascript application. This is used for providing building system and dependency management system. |
-
+|     vue      |         Main framework for this project.       |
+|     webpack  |    A module bundler for complex javascript application. This is used for providing building system and dependency management system. |
+|     pug       |   A template engine for easy html coding.(not necessary)  |
+|     less      |   A CSS pre-processor featuring variables, maxins, etc. |
+|     babel     |   A compiler for translating es6 to es5, so that you can use es6 syntax and features without worrying compatibility issues. |
+|     eslint    |  A tool for regulating coding style. |
+|     mocha     |  A testing framework for testing your utility functions. |
 
 ## Installation and Usage
 To install all dependencies.
