@@ -32,4 +32,4 @@ To build for production.
 ## Improvement plan
 + Loaders for fonts, images, post-css processing and more to be added.
 + Needs a development server and relating server scripts.
-
++ Could add yeoman scaffolding.
