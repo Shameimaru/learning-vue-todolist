@@ -13,7 +13,7 @@
             v-on:proceed="$emit('proceed', index)",
             v-on:deleteEntry="deleteEntry(index)"
         )
-        div(class="addDiv")
+        div(class="addDiv" v-if="canAdd")
             button(class="addBtn") +
             input(type="text")
             button 添加
@@ -25,6 +25,11 @@
     export default {
         components: {
             listItem: listItem
+        },
+        computed: {
+            canAdd: function() {
+
+            }
         },
         props: {
             title: {

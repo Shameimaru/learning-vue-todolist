@@ -19,10 +19,10 @@ export default {
             commit(types.DELETE_NOTE, payloads);
         },
         [types.DELETE_ENTRY]({ commit }, payloads) {
-            commit(types.DELETE_ENTRY, payloads)
+            commit(types.DELETE_ENTRY, payloads);
         },
         [types.PROCEED]({ commit }, payloads) {
-            commit(types.PROCEED, payloads)
+            commit(types.PROCEED, payloads);
         }
     }
     ,
