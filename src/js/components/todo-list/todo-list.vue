@@ -1,5 +1,5 @@
 <template lang="pug">
-    div
+    div(class="container")
         h2 {{ title }}
         list-item(
             v-for="(item, index) in content",
@@ -12,20 +12,21 @@
             :notes="item.notes"
         )
 
-        div(class="addDiv" v-if="canAdd")
-            div(class="addBtnDiv")
-                button(class="addBtn") +
-            div(class="newTag")
+        div(class="add-section" v-if="canAdd")
+            div(class="add-btn-container")
+                button(class="add-btn") +
+            div(class="add-section-form")
                 div
-                    label(for="title") 标题
+                    label(for="title") 标题：
                     input(id="title", type="text")
                 div
-                    label(for="date") 日期
+                    label(for="date") 日期：
                     input(id="date", type="date")
                 div
-                    label(for="desc") 描述
+                    label(for="desc") 描述：
                     input(id="desc", type="text")
-                button 添加
+                div
+                    button 添加
 </template>
 
 <script>
@@ -60,7 +61,7 @@
 <style lang="less" scoped>
     @import "../../../less/base.less";
     @import "../../../less/global-mixins.less";
-    h2, div {
+    h2, div.container {
         float: left;
         box-sizing: border-box;
         width: @container-width / 3 - @gap-width * 2;
@@ -68,8 +69,9 @@
         padding: 10px 0 0 0;
         text-align: center;
     }
-    .addBtnDiv {
-        .addBtn {
+    .add-btn-container {
+        margin: 0;
+        .add-btn {
             width: 100%;
             background-color: transparent;
             border: 1px solid black;
@@ -77,9 +79,18 @@
             height: 30px;
         }
     }
-    .addDiv {
+    .add-section {
         background-color: #ffffff;
-
+        label {
+            display: inline-block;
+            width: 50px;
+        }
+        input {
+            width: 200px;
+        }
+        .add-section-form>div {
+            margin-top: 10px;
+        }
     }
 
 </style>
