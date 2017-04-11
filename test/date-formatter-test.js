@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/4/11.
  */
 const chai = require('chai');
-const formatter = require('../lib/date-formatter');
+const formatter = require('../src/lib/date-formatter');
 chai.should();
 
 describe('/src/js/lib', function() {
