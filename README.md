@@ -3,16 +3,17 @@
 This is a demo of vuejs for practicing. Still, there are lots of stuff to improve.
 
 ## Dependencies used
-| name            |   description   |        
-|----------------|-------------------|
-|     vue      |         Main framework for this project.       |
-|     vuex     |         State management framework made for vue.  |
-|     webpack  |    A module bundler for complex javascript application. This is used for providing building system and dependency management system. |
-|     pug       |   A template engine for easy html coding.(not necessary)  |
-|     less      |   A CSS pre-processor featuring variables, maxins, etc. |
-|     babel     |   A compiler for translating es6 to es5, so that you can use es6 syntax and features without worrying compatibility issues. |
-|     eslint    |  A tool for regulating coding style. |
-|     mocha     |  A testing framework for testing your utility functions. |
+| name            |   description   |      website  |
+|----------------|-------------------|----------------------|
+|     vue      |         Main framework for this project.       |   https://cn.vuejs.org/ |
+|     vuex     |         State management framework made for vue.  |  https://vuex.vuejs.org/zh-cn/ |
+|     webpack  |    A module bundler for complex javascript application. This is used for providing building system and dependency management system. |    https://webpack.js.org/    |
+|     pug       |   A template engine for easy html coding.(not necessary)  |         https://pugjs.org/api/getting-started.html         |                         
+|     less      |   A CSS pre-processor featuring variables, maxins, etc. |     http://lesscss.org/     |
+|     babel     |   A compiler for translating es6 to es5, so that you can use es6 syntax and features without worrying compatibility issues. |    http://babeljs.io/     |
+|     eslint    |  A tool for regulating coding style. |     http://eslint.org/    |
+|     mocha     |  A testing framework for testing your utility functions. |    http://mochajs.org/    |
+|     chai      |  Assertion library paired with mocha framework.    |     http://chaijs.com/  |
 
 
 ## Installation and Usage
