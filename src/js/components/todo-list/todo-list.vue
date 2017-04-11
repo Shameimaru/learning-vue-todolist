@@ -3,20 +3,29 @@
         h2 {{ title }}
         list-item(
             v-for="(item, index) in content",
-            v-bind:key="index",
-            v-bind:dataIndex="dataIndex",
-            v-bind:contentIndex="index",
-            v-bind:title="item.title",
-            v-bind:datetime="item.datetime",
-            v-bind:textStr="item.textStr",
-            v-bind:notes="item.notes",
-            v-on:proceed="$emit('proceed', index)",
-            v-on:deleteEntry="deleteEntry(index)"
+            :key="index",
+            :dataIndex="dataIndex",
+            :contentIndex="index",
+            :title="item.title",
+            :datetime="item.datetime",
+            :textStr="item.textStr",
+            :notes="item.notes"
         )
+
         div(class="addDiv" v-if="canAdd")
-            button(class="addBtn") +
-            input(type="text")
-            button 添加
+            div(class="addBtnDiv")
+                button(class="addBtn") +
+            div(class="newTag")
+                div
+                    label(for="title") 标题
+                    input(id="title", type="text")
+                div
+                    label(for="date") 日期
+                    input(id="date", type="date")
+                div
+                    label(for="desc") 描述
+                    input(id="desc", type="text")
+                button 添加
 </template>
 
 <script>
@@ -28,7 +37,7 @@
         },
         computed: {
             canAdd: function() {
-
+                return this.dataIndex === 0;
             }
         },
         props: {
@@ -43,12 +52,6 @@
             dataIndex: {
                 required: true,
                 type: Number
-            }
-
-        },
-        methods: {
-            deleteEntry(index) {
-                this.content.splice(index, 1);
             }
         }
     }
@@ -65,16 +68,18 @@
         padding: 10px 0 0 0;
         text-align: center;
     }
-    .addDiv {
-        .round-form-input(24px);
+    .addBtnDiv {
         .addBtn {
             width: 100%;
-            margin-left: 15px;
             background-color: transparent;
             border: 1px solid black;
             border-radius: 20px;
             height: 30px;
         }
+    }
+    .addDiv {
+        background-color: #ffffff;
+
     }
 
 </style>
