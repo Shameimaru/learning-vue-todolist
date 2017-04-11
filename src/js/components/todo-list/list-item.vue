@@ -28,7 +28,7 @@
         },
         computed: {
             canProceed: function() {
-                return this.contentIndex !== 2;
+                return this.dataIndex !== 2;
             }
         },
         props: {

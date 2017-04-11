@@ -3,11 +3,11 @@
 This is a demo of vuejs for practicing. Still, there are lots of stuff to improve.
 
 ## Dependencies used
-| name            |   description   |      website  |
+|     name       |   description   |      website  |
 |----------------|-------------------|----------------------|
-|     vue      |         Main framework for this project.       |   https://cn.vuejs.org/ |
-|     vuex     |         State management framework made for vue.  |  https://vuex.vuejs.org/zh-cn/ |
-|     webpack  |    A module bundler for complex javascript application. This is used for providing building system and dependency management system. |    https://webpack.js.org/    |
+|     vue       |         Main framework for this project.       |   https://cn.vuejs.org/ |
+|     vuex      |         State management framework made for vue.  |  https://vuex.vuejs.org/zh-cn/ |
+|     webpack   |    A module bundler for complex javascript application. This is used for providing building system and dependency management system. |    https://webpack.js.org/    |
 |     pug       |   A template engine for easy html coding.(not necessary)  |         https://pugjs.org/api/getting-started.html         |                         
 |     less      |   A CSS pre-processor featuring variables, maxins, etc. |     http://lesscss.org/     |
 |     babel     |   A compiler for translating es6 to es5, so that you can use es6 syntax and features without worrying compatibility issues. |    http://babeljs.io/     |
