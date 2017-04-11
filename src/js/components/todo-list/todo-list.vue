@@ -4,14 +4,19 @@
         list-item(
             v-for="(item, index) in content",
             v-bind:key="index",
+            v-bind:dataIndex="dataIndex",
+            v-bind:contentIndex="index",
             v-bind:title="item.title",
             v-bind:datetime="item.datetime",
             v-bind:textStr="item.textStr",
             v-bind:notes="item.notes",
-            v-bind:canProceed="canProceed",
             v-on:proceed="$emit('proceed', index)",
             v-on:deleteEntry="deleteEntry(index)"
         )
+        div(class="addDiv")
+            button(class="addBtn") +
+            input(type="text")
+            button 添加
 </template>
 
 <script>
@@ -30,10 +35,11 @@
                 required: false,
                 type: Array
             },
-            canProceed: {
-                required: false,
-                type: Boolean
+            dataIndex: {
+                required: true,
+                type: Number
             }
+
         },
         methods: {
             deleteEntry(index) {
@@ -44,8 +50,8 @@
 </script>
 
 <style lang="less" scoped>
-    @import "../../less/base.less";
-    @import "../../less/global-mixins.less";
+    @import "../../../less/base.less";
+    @import "../../../less/global-mixins.less";
     h2, div {
         float: left;
         box-sizing: border-box;
@@ -54,4 +60,16 @@
         padding: 10px 0 0 0;
         text-align: center;
     }
+    .addDiv {
+        .round-form-input(24px);
+        .addBtn {
+            width: 100%;
+            margin-left: 15px;
+            background-color: transparent;
+            border: 1px solid black;
+            border-radius: 20px;
+            height: 30px;
+        }
+    }
+
 </style>

@@ -6,21 +6,29 @@
             p {{ textStr }}
             div(class="note", v-for="(note, index) in notes")
                 div {{note}}
-                button(v-on:click="deleteNote(index);") x
+                button(v-on:click="deleteNote({ index, contentIndex, dataIndex });") x
         div
             input(type="text", v-model="toAddStr")
-            button(v-on:click="addNote();") 添加
+            button(v-on:click="addNote({ toAddStr, contentIndex, dataIndex })") 添加
         div(v-show="canProceed")
-            button(v-on:click="proceed()") ok
+            button(v-on:click="proceed({ contentIndex, dataIndex })") ok
         div(class="delete")
-            button(v-on:click="deleteEntry()") x
+            button(v-on:click="deleteEntry({ contentIndex, dataIndex })") x
 </template>
 
 <script>
+    import { mapActions } from 'vuex';
+    import * as types from '../../store/modules/todo-list/mutation_types';
+
     export default {
         data: function () {
             return {
                 toAddStr: ''
+            }
+        },
+        computed: {
+            canProceed: function() {
+                return this.contentIndex !== 2;
             }
         },
         props: {
@@ -40,35 +48,28 @@
                 required: false,
                 type: Array
             },
-            canProceed: {
-                required: false,
-                type: Boolean
+            contentIndex: {
+                required: true,
+                type: Number
+            },
+            dataIndex: {
+                required: true,
+                type: Number
             }
         },
         methods: {
-            deleteNote(index) {
-                this.notes.splice(index, 1);
-            },
-            addNote() {
-                if(this.toAddStr.trim() !== '') {
-                    this.notes.push(this.toAddStr);
-                    this.toAddStr = '';
-                }
-            },
-            proceed() {
-                this.$emit('proceed');
-                this.toAddStr = '';
-            },
-            deleteEntry() {
-                this.$emit('deleteEntry');
-                this.toAddStr = '';
-            }
+            ...mapActions({
+                deleteNote: types.DELETE_NOTE,
+                deleteEntry: types.DELETE_ENTRY,
+                proceed: types.PROCEED,
+                addNote: types.ADD_NOTE
+            })
         }
     }
 </script>
 
 <style lang="less" scoped="scoped">
-    @import "../../less/global-mixins.less";
+    @import "../../../less/global-mixins.less";
 
     .list-item {
         border: 1px solid black;

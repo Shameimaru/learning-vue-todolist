@@ -3,16 +3,18 @@
  */
 // dependency
 import Vue from 'vue';
+import Vuex from 'vuex';
+
+import store from './store/index';
 // global less
 import '../less/base.less';
 
 // root vue
-import app from './todo-list/index.vue';
+import app from './components/todo-list/index.vue';
 
 const local_data = [
     {
         title: '即将要做',
-        index: 0,
         content: [
             {
                 title: '扫地',
@@ -43,7 +45,6 @@ const local_data = [
     },
     {
         title: '正在进行',
-        index: 1,
         content: [{
             title: '做饭',
             datetime: '2016年10月1日',
@@ -56,7 +57,6 @@ const local_data = [
     },
     {
         title: '已经完成',
-        index: 2,
         content: [{
             title: '睡觉',
             datetime: '2016年10月1日',
@@ -69,6 +69,8 @@ const local_data = [
     }
 ];
 
+
+
 new Vue({
     el: '#container',
     data: {
@@ -77,7 +79,8 @@ new Vue({
     components: {
         app
     },
+    store,
     created() {
-        this.data = local_data;
+        this.$store.state.todoList.data = local_data;
     }
 });
