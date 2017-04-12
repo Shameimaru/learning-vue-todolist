@@ -29,6 +29,10 @@ To build for production.
  
  `$ npm run build:prod`
 
+To run unit tests for all utility functions.
+
+`$ npm run test`
+
 ## Improvement plan
 + Loaders for fonts, images, post-css processing and more to be added.
 + Needs a development server and relating server scripts.

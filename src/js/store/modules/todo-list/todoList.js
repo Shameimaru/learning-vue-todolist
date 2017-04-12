@@ -3,6 +3,7 @@
  */
 import * as types from './mutationTypes';
 import formatter from '../../../../lib/date-formatter';
+import localdata from '../../mock/todolist';
 
 const state = {data: []};
 
@@ -36,6 +37,9 @@ const actions = {
                 textStr: desc
             });
         }
+    },
+    [types.INIT_DATA]({ commit }) {
+        commit(types.INIT_DATA);
     }
 };
 
@@ -60,7 +64,11 @@ const mutations = {
             textStr,
             notes: []
         });
+    },
+    [types.INIT_DATA](state) {
+        state.data = localdata.data;
     }
+
 };
 
 export default {

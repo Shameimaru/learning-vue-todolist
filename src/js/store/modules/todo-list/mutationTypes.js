@@ -6,3 +6,4 @@ export const ADD_NOTE = 'ADD_NOTE';
 export const DELETE_ENTRY = 'DELETE_ENTRY';
 export const PROCEED = 'PROCEED';
 export const ADD_ENTRY = 'ADD_ENTRY';
+export const INIT_DATA = 'INIT_DATA';

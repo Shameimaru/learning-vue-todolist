@@ -11,6 +11,7 @@
 <script>
     import {mapGetters} from 'vuex';
     import todoList from './todo-list.vue';
+    import * as types from '../../store/modules/todo-list/mutationTypes';
 
     module.exports = {
         computed: {
@@ -18,6 +19,9 @@
         },
         components: {
             todoList
+        },
+        created() {
+            this.$store.dispatch(types.INIT_DATA)
         }
     }
 </script>
