@@ -3,14 +3,13 @@
  */
 // dependency
 import Vue from 'vue';
-import Vuex from 'vuex';
 
-import store from './store/index';
+import store from './store/store.js';
 // global less
 import '../less/base.less';
 
 // root vue
-import app from './components/todo-list/index.vue';
+import todoListContainer from './components/todo-list/todo-list-container.vue';
 
 const local_data = [
     {
@@ -77,7 +76,7 @@ new Vue({
         data: {}
     },
     components: {
-        app
+        todoListContainer
     },
     store,
     created() {

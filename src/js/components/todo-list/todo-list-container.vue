@@ -2,10 +2,10 @@
     div(class="list-container")
         todo-list(
             v-for="(value, index) in data",
-            v-bind:key="index",
-            v-bind:dataIndex="index"
-            v-bind:title="value.title",
-            v-bind:content="value.content"
+            :key="index",
+            :dataIndex="index",
+            :title="value.title",
+            :content="value.content"
         )
 </template>
 <script>

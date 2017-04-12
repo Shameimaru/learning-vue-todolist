@@ -33,7 +33,7 @@ module.exports = {
     module: {
         rules: [{
             test: /\.css$/,
-            use: ['style-loader', 'css-loader']
+            loaders: ['style-loader', 'css-loader']
         }, {
             test: /\.vue$/,
             loader: 'vue-loader',
@@ -42,10 +42,20 @@ module.exports = {
             loader: 'pug-loader'
         }, {
             test: /\.less$/,
-            loader: 'vue-style-loader!css-loader!less-loader'
+            loaders: ['vue-style-loader', 'css-loader', 'less-loader']
         }, {
             test: /\.js$/,
+            exclude: /node_modules|test/,
             loader: 'babel-loader'
+        }, {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000
+            }
+        }, {
+            test:  /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            loader: 'url-loader'
         }],
     },
     plugins,

@@ -12,10 +12,10 @@
             :notes="item.notes"
         )
 
-        div(class="add-section" v-if="canAdd")
-            div(class="add-btn-container" v-show="showAddBtn")
-                button(class="add-btn",@click="toggleAddSection") 新条目
-            div(class="add-section-form" v-show="showAddSection")
+        div(class="add-section", v-if="canAdd")
+            div(class="add-btn-container", v-show="showAddBtn")
+                button(class="add-btn", @click="toggleAddSection") 新条目
+            div(class="add-section-form", v-show="showAddSection")
                 div
                     label(for="title") 标题：
                     input(id="title", type="text", v-model="newEntryInfo.title")
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-    import * as types from '../../store/modules/todo-list/mutation_types';
+    import * as types from '../../store/modules/todo-list/mutationTypes';
     import listItem from './list-item.vue';
 
     export default {
@@ -85,14 +85,14 @@
 <style lang="less" scoped>
     @import "../../../less/base.less";
     @import "../../../less/global-mixins.less";
-    h2, div.container {
+     div.container {
         float: left;
         box-sizing: border-box;
         width: @container-width / 3 - @gap-width * 2;
         margin: 0 @gap-width;
         padding: 10px 0 0 0;
         text-align: center;
-    }
+     }
     .add-btn-container {
         margin: 0;
         .add-btn {

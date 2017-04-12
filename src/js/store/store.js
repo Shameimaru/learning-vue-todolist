@@ -4,7 +4,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import todoList from './modules/todo-list/index';
+import todoList from './modules/todo-list/todoList';
 
 Vue.use(Vuex);
 

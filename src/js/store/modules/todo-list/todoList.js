@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/4/11.
  */
-import * as types from './mutation_types';
+import * as types from './mutationTypes';
 import formatter from '../../../../lib/date-formatter';
 
 const state = {data: []};

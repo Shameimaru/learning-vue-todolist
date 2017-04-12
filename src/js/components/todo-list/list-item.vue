@@ -6,19 +6,19 @@
             p {{ textStr }}
             div(class="note", v-for="(note, index) in notes")
                 div {{note}}
-                button(v-on:click="deleteNote({ index, contentIndex, dataIndex });") x
+                button(@click="deleteNote({ index, contentIndex, dataIndex });") x
         div
             input(type="text", v-model="toAddStr")
-            button(v-on:click="addNote({ toAddStr, contentIndex, dataIndex })") 添加
+            button(@click="addNote({ toAddStr, contentIndex, dataIndex })") 添加
         div(v-show="canProceed")
-            button(v-on:click="proceed({ contentIndex, dataIndex })") ok
+            button(@click="proceed({ contentIndex, dataIndex })") ok
         div(class="delete")
-            button(v-on:click="deleteEntry({ contentIndex, dataIndex })") x
+            button(@click="deleteEntry({ contentIndex, dataIndex })") x
 </template>
 
 <script>
     import { mapActions } from 'vuex';
-    import * as types from '../../store/modules/todo-list/mutation_types';
+    import * as types from '../../store/modules/todo-list/mutationTypes';
 
     export default {
         data: function () {
