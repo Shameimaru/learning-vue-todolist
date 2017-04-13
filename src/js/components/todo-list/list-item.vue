@@ -5,8 +5,9 @@
             p {{ datetime }}
             p {{ textStr }}
             div(class="note", v-for="(note, index) in notes")
-                div {{note}}
-                button(@click="deleteNote({ index, contentIndex, dataIndex });") x
+                template
+                    div {{note}}
+                    button(@click="deleteNote({ index, contentIndex, dataIndex });") x
         div
             input(type="text", v-model="toAddStr")
             button(@click="addNote({ toAddStr, contentIndex, dataIndex })") 添加

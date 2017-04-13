@@ -45,7 +45,7 @@
             }
         },
         components: {
-            listItem: listItem
+            listItem
         },
         computed: {
             showAddBtn: function() {
